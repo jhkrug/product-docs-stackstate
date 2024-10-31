@@ -27,7 +27,7 @@ The health synchronization framework works as follows:
  ** the `topologyElementIdentifier` from the ingested link:send-health-data/send-health-data.adoc#json-health-payload[health payload].
 * SUSE Observability keeps track of changes to both topology elements and health checks to maintain up-to-date information.
 
-image::../../.gitbook/assets/health-sync-pipeline.svg[Health synchronization pipeline]
+image::health-sync-pipeline.svg[Health synchronization pipeline]
 
 === Consistency models
 

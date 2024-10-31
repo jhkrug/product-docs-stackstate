@@ -26,10 +26,10 @@ Although an explore view is meant to be temporary, it can be saved as a xref:k8s
 
 If you don't want to save an explore view, simply move away from it or go back to the view you started from by using the breadcrumbs on the top navigation bar.
 
-image::../../.gitbook/assets/k8s/k8s-explore-views.png[Explore views]
+image::k8s/k8s-explore-views.png[Explore views]
 
 == Structure
 
 The explore views have an identical structure to the xref:k8s-custom-views.adoc[custom views]: they have the same link:k8s-view-structure.adoc#filters[filters] and the same link:k8s-view-structure.adoc#perspectives[perspectives].
 
-image::../../.gitbook/assets/k8s/k8s-explore-views-structure.png[Explore views structure]
+image::k8s/k8s-explore-views-structure.png[Explore views structure]

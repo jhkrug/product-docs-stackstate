@@ -25,4 +25,4 @@ The *Perspectives* of a view are displayed as tabs on the top left corner of the
 *All the perspectives* will update their content based on the xref:../stackstate-ui/k8sTs-timeline-time-travel.adoc[timeline] configuration.
 {% endhint %}
 
-image::../../.gitbook/assets/k8s/k8s-overview-perspective-cards-layout.png[Overview cards layout]
+image::k8s/k8s-overview-perspective-cards-layout.png[Overview cards layout]

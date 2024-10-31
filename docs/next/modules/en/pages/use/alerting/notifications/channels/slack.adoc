@@ -17,7 +17,7 @@ Click "Allow" to continue.
 
 === Select a Slack channel
 
-image::/.gitbook/assets/k8s/notifications-slack-channel-configuration.png[Select the Slack channel]
+image::k8s/notifications-slack-channel-configuration.png[Select the Slack channel]
 
 Back in SUSE Observability you can now select a Slack channel from the list. Select the channel where the notification messages need to be sent.
 
@@ -31,7 +31,7 @@ Finally click the "Add channel" button. This adds the channel to the list of cha
 
 == Slack messages for notifications
 
-When a notification is opened a new Slack message is created. This message will be updated for changes, usually only when the health state changes. In the thread for the message every change will show up as a message as well. Finally, when the notification is closed the Slack message is updated again (now the bar that shows the health state is grey) and a final message is added to the Slack thread that describes why the notification was closed.+++<figure>+++image::/.gitbook/assets/k8s/notifications-slack-message-example.png[Slack thread example,75%]+++<figcaption>+++A Slack message with its thread for a closed notification+++</figcaption>++++++</figure>+++
+When a notification is opened a new Slack message is created. This message will be updated for changes, usually only when the health state changes. In the thread for the message every change will show up as a message as well. Finally, when the notification is closed the Slack message is updated again (now the bar that shows the health state is grey) and a final message is added to the Slack thread that describes why the notification was closed.+++<figure>+++image::k8s/notifications-slack-message-example.png[Slack thread example,75%]+++<figcaption>+++A Slack message with its thread for a closed notification+++</figcaption>++++++</figure>+++
 
 == Related
 

@@ -3,7 +3,7 @@
 
 The Metrics Perspective shows metrics for the selected resource.
 
-image::../../.gitbook/assets/k8s/k8s-metrics-perspective.png[Metrics perspective]
+image::k8s/k8s-metrics-perspective.png[Metrics perspective]
 
 == Charts
 

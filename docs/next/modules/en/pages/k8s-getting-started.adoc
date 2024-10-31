@@ -7,11 +7,11 @@ After setting up your xref:k8s-quick-start-guide.adoc[integration with Kubernete
 
 == Explore your Kubernetes resources
 
-image::/.gitbook/assets/k8s/k8s-quick-start-menu.png[Main menu]
+image::k8s/k8s-quick-start-menu.png[Main menu]
 
 This brings you to the service overview which shows all services running in your clusters. If you click any of the other items underneath Kubernetes you will go to the overview page of that type of resource. It will show all resources of that type in all clusters and all namespaces at first.
 
-image::/.gitbook/assets/k8s/k8s-quick-start-services.png[Services overview]
+image::k8s/k8s-quick-start-services.png[Services overview]
 
 At the right top, you have the option to filter your selection to a certain cluster and/ or namespace to see the resources for which you are responsible.
 
@@ -23,7 +23,7 @@ At the bottom left, you find two inputs.
 You can for example filter on a certain namespace, in this case, I filter the services down to 'sock-shop' which is a demo application using different microservices written in different programming languages and using different ways of communication to act as a nice example for troubleshooting an issue.
 If you now click on Topology you will see the topology of the currently selected components (in this case the services of the sock-shop).
 
-image::/.gitbook/assets/k8s/k8s-quick-start-service-topology.png[Services topology]
+image::k8s/k8s-quick-start-service-topology.png[Services topology]
 
 In the topology, you see all resources, in this case services.
 
@@ -31,7 +31,7 @@ In the topology, you see all resources, in this case services.
 * If you click a relation you will see the detail of the relation including all components part of it. In the case of a service map you will see all components involved in the service-to-service communication.
 If you want to open a component to see all details of that resource (e.g. the details of this service a certain service) you can click on the 'Open Component' button from a selected component (which you then see in the Right Hand Side panel) or you can open the component by clicking on the name of the component in the overview page tab.
 
-image::/.gitbook/assets/k8s/k8s-quick-start-service.png[Service overview]
+image::k8s/k8s-quick-start-service.png[Service overview]
 
 After opening a Kubernetes resource you will get a Highlight perspective showing you all the highlights of that component.
 
@@ -45,4 +45,4 @@ After opening a Kubernetes resource you will get a Highlight perspective showing
 
 Let's now explore a triggered monitor by clicking on the 'HTTP - 5xx error ratio' one.
 
-image::/.gitbook/assets/k8s/k8s-quick-start-service-5xx-error-triggered-monitor.png[HTTP - 5xx error ratio triggered monitor]
+image::k8s/k8s-quick-start-service-5xx-error-triggered-monitor.png[HTTP - 5xx error ratio triggered monitor]

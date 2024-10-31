@@ -19,10 +19,10 @@ To remediate quickly SUSE Observability has a clear problem report and remediati
 . Often, issues don't happen in isolation. Sometimes they cause other issues, or the real problem is caused by a different component. SUSE Observability keeps track of how all components are related and warns you about related issues.
 . The remediation guide itself to guide you through the problem resolution step by step.
 
-image::../../.gitbook/assets/k8s/guided-troubleshooting.png[]
+image::k8s/guided-troubleshooting.png[]
 
 == Using pinned items when troubleshooting
 
 You can keep a remediation guide at hand while troubleshooting by adding it to the *pinned items*. Click on *Add to pinned items* button to pin remediation guide for the current monitor. Now you can follow the step-by-step guidance even when you close the triggered monitor. You can access all pinned remediation guides from the pinned items menu. When you are done troubleshooting just unpin the guide from the menu.
 
-image::../../.gitbook/assets/k8s/k8s-pinned-items.png[]
+image::k8s/k8s-pinned-items.png[]

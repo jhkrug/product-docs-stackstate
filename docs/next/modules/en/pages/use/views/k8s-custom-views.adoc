@@ -11,7 +11,7 @@ In other words, you can create a custom view by saving a xref:k8s-views.adoc[kub
 By default, custom views will be visible to all users, these can be secured by a *SUSE Observability administrator* if required.
 {% endhint %}
 
-image::../../.gitbook/assets/k8s/k8s-custom-view.png[Custom view]
+image::k8s/k8s-custom-view.png[Custom view]
 
 == Handling
 
@@ -23,7 +23,7 @@ If you frequently use a certain custom view, you can add it to the *starred view
 
 To create a new custom view, click the *Save view as...* blue button on the top navigation bar when you're on a xref:k8s-views.adoc[kubernetes view] or an xref:k8s-explore-views.adoc[explore view]. To create a new view from a modified custom view, use the dropdown menu next to the button and select *Save view as...*.
 
-image::../../.gitbook/assets/k8s/k8s-custom-view-edit-settings.png[Edit view settings]
+image::k8s/k8s-custom-view-edit-settings.png[Edit view settings]
 
 In the *Save view as* dialog, the following options can be set:
 

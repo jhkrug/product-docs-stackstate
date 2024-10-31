@@ -144,7 +144,7 @@ scope: type = "deployment" and label = "stackpack:kubernetes"
 
 Creating it in SUSE Observability and viewing the "Replica count" chart on a deployment component gives an unexpected result. The chart shows the replica counts for all deployments. Logically one would expect only 1 time series: the replica count for this specific deployment.
 
-image::../../.gitbook/assets/k8s/k8s-replica-counts-without-binding.png[The incorrect chart for a single deployment, it shows the replica count for all deployments]
+image::k8s/k8s-replica-counts-without-binding.png[The incorrect chart for a single deployment, it shows the replica count for all deployments]
 
 To fix this make the PromQL query specific for a component using information from the component. Filter on enough metric labels to select only the specific time series for the component. This is the "binding" of the correct time series to the component. For anyone experienced in making Grafana dashboards this is similar to a dashboard with parameters that are used in queries on the dashboard. Let's change the query in the metric binding to this:
 
@@ -152,7 +152,7 @@ To fix this make the PromQL query specific for a component using information fro
 max_over_time(kubernetes_state_deployment_replicas{cluster_name="${tags.cluster-name}", namespace="${tags.namespace}", deployment="${name}"}[${__interval}])
 ----
 
-image::../../.gitbook/assets/k8s/k8s-replica-counts-with-binding.png[After adding the parameterized filters the resulting chart looks as expected, only 1 time series for this component]
+image::k8s/k8s-replica-counts-with-binding.png[After adding the parameterized filters the resulting chart looks as expected, only 1 time series for this component]
 
 The PromQL query now filters on 3 labels, `cluster_name`, `namespace` and `deployment`. Instead of specifying an actual value for these labels a variable reference to fields of the component is used. In this case the labels `cluster-name` and `namespace` are used, referenced using `${tags.cluster-name}` and `${tags.namespace}`. Further the component name is referenced with `+${name}+`.
 
@@ -161,7 +161,7 @@ Supported variable references are:
 * Any component label, using `${tags.<label-name>}`
 * The component name, using `+${name}+`
 
-image::../../.gitbook/assets/k8s/k8s-carts-highlights.png[Component Highlights page that shows the labels and component name (both highlighted in red)]
+image::k8s/k8s-carts-highlights.png[Component Highlights page that shows the labels and component name (both highlighted in red)]
 
 {% hint style="info" %}
 The cluster name, namespace and a combination of the component type and name are ususally enough for selecting the metrics for a specific component from Kubernetes. These labels, or similar labels, are usually available on most metrics and components.
@@ -262,7 +262,7 @@ nodes:
   scope: type = "deployment" and label = "stackpack:kubernetes"
 ----
 
-image::../../.gitbook/assets/k8s/k8s-replica-counts-multiple-timeseries.png[Metric binding with multiple metrics]
+image::k8s/k8s-replica-counts-multiple-timeseries.png[Metric binding with multiple metrics]
 
 === Using metric labels in aliases
 

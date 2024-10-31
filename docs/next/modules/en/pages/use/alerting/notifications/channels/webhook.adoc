@@ -7,7 +7,7 @@ The webhook channel sends the notifications data as <<webhook-requests-and-paylo
 
 == Configure a webhook
 
-image::/.gitbook/assets/k8s/notifications-webhook-channel-configuration.png[Configure a webhook]
+image::k8s/notifications-webhook-channel-configuration.png[Configure a webhook]
 
 To configure a webhook complete the fields:
 

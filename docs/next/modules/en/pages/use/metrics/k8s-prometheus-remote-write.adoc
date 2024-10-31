@@ -5,7 +5,7 @@ When you have your own on-premise or self-hosted Prometheus running where metric
 
 To make this possible, SUSE Observability exposes the Prometheus `remote_write` protocol as an endpoint. Using this endpoint you can configure your Prometheus instance to send metrics to SUSE Observability. The metrics are then automatically ingested, and it will be possible to bind the metrics to the components observed by SUSE Observability. The following diagram shows how this works:
 
-image::../../.gitbook/assets/k8s/k8s-prometheus-remotewrite.png[Prometheus Remote Write]
+image::k8s/k8s-prometheus-remotewrite.png[Prometheus Remote Write]
 
 == Prerequisites
 
@@ -13,12 +13,12 @@ To mirror your Prometheus metrics in SUSE Observability, you need to lookup the 
 
 . Open the SUSE Observability UI and navigate to the StackPacks page
 +
-image::../../.gitbook/assets/k8s/k8s-stackpacks.png[StackPacks]
+image::k8s/k8s-stackpacks.png[StackPacks]
 
 . Find the Kubernetes StackPack and click on it.
 . In the description of the StackPack, you will find the API Key that's used to send in metrics into SUSE Observability.
 +
-image::../../.gitbook/assets/k8s/k8s-stackpacks-apikey.png[API Key]
+image::k8s/k8s-stackpacks-apikey.png[API Key]
 
 == Configuring your Prometheus instance
 

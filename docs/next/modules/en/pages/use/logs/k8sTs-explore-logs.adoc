@@ -6,13 +6,13 @@
 You can explore the container logs of any Kubernetes environment that is configured with log shipping through the SUSE Observability UI.
 This can be done by drilling down to `pod` level through any of the provided paradigms (Services, Deployments, Stateful Sets, Daemon Sets, etc.) from the Kubernetes menu on the left
 
-image::../../.gitbook/assets/k8s/k8s-menu.png[Kubernetes Paradigms Menu]
+image::k8s/k8s-menu.png[Kubernetes Paradigms Menu]
 
 For simplicity, and completeness, the example uses the `Pods` paradigm directly, and a pod was chosen that contains multiple containers, as to be able to distinguish between Pod logs and Container logs.  The Pod view will have multiple log-related entry points.
 
 == Viewing the Logs
 
-image::../../.gitbook/assets/k8s/k8s-pod-view-node-agent.png[Kubernetes Pod View]
+image::k8s/k8s-pod-view-node-agent.png[Kubernetes Pod View]
 
 To view all the logs associated with this Pod, click on either of the two options circled in red.  To filter by log entry type (Errors, Warnings, Other), select one of the items circled in blue.  The histogram displaying proportionality between the log entry types is circled in green.
 
@@ -22,7 +22,7 @@ The Logs Drawer facilitates a visually pleasing experience to navigating log fil
 
 For simplicity, the example only deals with unfiltered selections (circled in red), which will display all log lines, of all containers, of any log entry type.  Selecting either of the two options circled in red opens up the log drawer with no filtering applied:
 
-image::../../.gitbook/assets/k8s/k8s-pod-view-log-drawer-no-filter.png[Kubernetes Log View No Filters]
+image::k8s/k8s-pod-view-log-drawer-no-filter.png[Kubernetes Log View No Filters]
 
 From this point onward, one could start to drill in closer to the problem by applying options to the provided filters (search string match, severity, container, log window interval).  Several options are available for sorting and display preference directly below the histogram in the logs drawer.
 
@@ -33,7 +33,7 @@ From this point onward, one could start to drill in closer to the problem by app
 
 As an example, all four can be seen in action below:
 
-image::../../.gitbook/assets/k8s/k8s-pod-view-log-drawer-with-filters.png[Kubernetes Log View With Filters]
+image::k8s/k8s-pod-view-log-drawer-with-filters.png[Kubernetes Log View With Filters]
 
 The image above has the following filters applied:
 

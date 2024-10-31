@@ -15,7 +15,7 @@ You can check if the desired notification already exists. If not create a new on
 
 == Configure when to notify
 
-image::/.gitbook/assets/k8s/notifications-add-new-notification.png[Adding a new notification]
+image::k8s/notifications-add-new-notification.png[Adding a new notification]
 
 Configure the notification:
 

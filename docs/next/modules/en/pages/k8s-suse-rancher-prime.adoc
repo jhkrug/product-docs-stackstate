@@ -148,7 +148,7 @@ For StackState to be able to work properly it needs:
 * https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/manage-clusters/create-kubernetes-persistent-storage[Kubernetes Persistent Storage] to be available in the observability cluster to store metrics, events, etc.
 * the observability cluster to support a way to expose StackState on an HTTPS URL to Rancher, StackState users and the StackState agent. This can be done via an Ingress configuration using an ingress controller, alternatively a (cloud) loadbalancer for the StackState services could do this too, for more information see the https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/kubernetes-resources-setup/load-balancer-and-ingress-controller[Rancher docs].
 
-image::/.gitbook/assets/k8s/prime/SUSEObservabilityDeployment.png[Architecture]
+image::k8s/prime/SUSEObservabilityDeployment.png[Architecture]
 
 === Pre-Installation
 
@@ -166,7 +166,7 @@ Before installing the SUSE Observability server a default storage class must be 
 If you created the cluster using Rancher Manager and would like to run the provisioning commands below from a local terminal instead of in the web terminal, just copy or download the kubeconfig from the cluster dashboard, see image below, and paste it (or place the downloaded file) into a file that you can easily find e.g. ~/.kube/config-rancher and set the environment variable KUBECONFIG=$HOME/.kube/config-rancher
 {% endhint %}
 
-image::/.gitbook/assets/k8s/prime/rancher_cluster_dashboard.png[Rancher]
+image::k8s/prime/rancher_cluster_dashboard.png[Rancher]
 
 After meeting the prerequisites you can proceed with the installation. The installation is NOT YET AVAILABLE from the app store. Instead, you can install SUSE Observability via the kubectl shell of the cluster.
 
@@ -248,7 +248,7 @@ If you prefer to use a load balancer instead of ingress, expose the `suse-observ
 
 To install UI extensions, enable the UI extensions from the rancher UI
 
-image::/.gitbook/assets/k8s/prime/ui_extensions.png[Install]
+image::k8s/prime/ui_extensions.png[Install]
 
 After enabling UI extensions, follow these steps:
 

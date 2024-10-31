@@ -5,7 +5,7 @@
 
 The timeline at the bottom of the SUSE Observability UI allows you to travel back in time to the state of the topology at a specific point in the past. You can then navigate through all telemetry available for the selected topology snapshot. Health and events charts in the timeline give an overview of the state of the topology during the selected telemetry interval.
 
-image::../../.gitbook/assets/k8s/k8s-timeline.png[Timeline]
+image::k8s/k8s-timeline.png[Timeline]
 
 == Timeline
 
@@ -13,7 +13,7 @@ image::../../.gitbook/assets/k8s/k8s-timeline.png[Timeline]
 
 The telemetry interval specifies the time window for which events, metrics and traces are available in the SUSE Observability perspectives. It runs from left to right on the timeline.
 
-image::../../.gitbook/assets/v51_telemetry_interval.png[Telemetry interval]
+image::v51_telemetry_interval.png[Telemetry interval]
 
 The selected telemetry interval can be either relative (live mode), or set to a custom telemetry interval (time travel mode). By default, the telemetry interval is set to a relative telemetry interval - in live mode and shows telemetry from the last hour. You can zoom in/out or set a custom telemetry interval to view telemetry from a specific point in time.
 
@@ -29,25 +29,25 @@ The telemetry interval can be set in the following ways:
 
 * *Zoom in*
 
-image::../../.gitbook/assets/v51_timeline_click_drag.png[Click and drag on the timeline to set a custom telemetry interval on your selection]
+image::v51_timeline_click_drag.png[Click and drag on the timeline to set a custom telemetry interval on your selection]
 
 * *Zoom out*
 
-image::../../.gitbook/assets/v51_telemetry_interval_zoom_out.png[Click the magnifying glass to double the size of the telemetry interval]
+image::v51_telemetry_interval_zoom_out.png[Click the magnifying glass to double the size of the telemetry interval]
 
 * *Use the telemetry interval jumper arrows*
 
-image::../../.gitbook/assets/v51_telemetry_interval_jumper.png[Click the time jumper arrows to move the telemetry interval backwards or forwards through time]
+image::v51_telemetry_interval_jumper.png[Click the time jumper arrows to move the telemetry interval backwards or forwards through time]
 
 * *Set a relative or custom telemetry interval*
 
-image::../../.gitbook/assets/v51_timeline_telemetry_interval.png[Use the popup "Set the telemetry interval" to specify a telemetry interval]
+image::v51_timeline_telemetry_interval.png[Use the popup "Set the telemetry interval" to specify a telemetry interval]
 
 === Topology time
 
 The topology in SUSE Observability is based on a snapshot of your environments as observed at that moment. The moment from which this snapshot is taken is specified by the topology time. By default, SUSE Observability is in live mode with the topology time set to the current time. You can <<time-travel,time travel>> to a previous state of the topology by selecting a custom topology time. This helps you to investigate an issue at a certain moment in time. Even if a pod is long gone you can still see how it was connected, its logs, events, related resources, events and more.
 
-image::../../.gitbook/assets/v51_topology_time.png[Topology time]
+image::v51_topology_time.png[Topology time]
 
 On the timeline, the selected topology time is indicated by the play head - a black line with the current topology time at the top. It's also specified in the *Topology time* box at the top of the timeline.
 
@@ -57,25 +57,25 @@ The topology time can be set in the following ways:
 
 * *Click on the timeline*
 
-image::../../.gitbook/assets/v51_topology_time_timeline.png[Click anywhere on the timeline to set the topology time to that moment]
+image::v51_topology_time_timeline.png[Click anywhere on the timeline to set the topology time to that moment]
 
 * *Use the topology time jumper arrows*
 
-image::../../.gitbook/assets/v51_topology_time_jumper.png[Click the topology time jumper arrows to move the topology time backwards or forwards in time to the next set of events]
+image::v51_topology_time_jumper.png[Click the topology time jumper arrows to move the topology time backwards or forwards in time to the next set of events]
 
 * *Set a custom topology time*
 
-image::../../.gitbook/assets/v51_topology_time_popup.png[Use the popup "Set the topology time" to specify a topology time]
+image::v51_topology_time_popup.png[Use the popup "Set the topology time" to specify a topology time]
 
 * *Click a timestamp*
 
-image::../../.gitbook/assets/v51_topology_time_timestamp.png[Click a timestamp to jump to that specific topology time]
+image::v51_topology_time_timestamp.png[Click a timestamp to jump to that specific topology time]
 
 ==== Topology time outside the telemetry interval
 
 If the selected topology time is a time outside the currently selected <<telemetry-interval,telemetry interval>>, the message "The topology time is out of the current telemetry interval" will be displayed and the *Topology time* box at the top of the timeline will be highlighted black. As the timeline shows the telemetry interval from left to right, the play head indicating the current topology time won't be visible on the timeline.
 
-image::/.gitbook/assets/v51_topology_time_outside_telemetry_interval.png[Topology time outside telemetry interval]
+image::v51_topology_time_outside_telemetry_interval.png[Topology time outside telemetry interval]
 
 You can still browse topology and telemetry as expected:
 
@@ -86,7 +86,7 @@ You can still browse topology and telemetry as expected:
 
 To stop time travelling and return the topology time to live mode, click *Go live* or *BACK TO LIVE* at the top of the screen.
 
-image::../../.gitbook/assets/v51_timeline_go_live.png[Go live]
+image::v51_timeline_go_live.png[Go live]
 
 === Health
 
@@ -94,7 +94,7 @@ The health state of a view during the selected telemetry interval is displayed a
 
 For single resources, the health will be shown over time, in an overview a grey line is displayed.
 
-image::../../.gitbook/assets/v51_timeline_no_health_state.png[Health state not available]
+image::v51_timeline_no_health_state.png[Health state not available]
 
 === Events
 
@@ -102,7 +102,7 @@ The *Events* line in the timeline shows a bar chart with the number of events ge
 
 To zoom in on an event bar of interest, click and drag to select a smaller telemetry interval around it on the timeline.
 
-image::../../.gitbook/assets/v51_timeline_click_drag.png[Click and drag to select a telemetry interval]
+image::v51_timeline_click_drag.png[Click and drag to select a telemetry interval]
 
 {% hint style="info" %}
 A single click on the timeline will move the play head to this point in time, and thus time travel to the state of the topology at the selected <<topology-time,topology time>>. Only events generated by topology elements that existed at the newly selected topology time will now be displayed.
@@ -117,4 +117,4 @@ In each of the SUSE Observability perspectives, you can either be in live mode o
 
 To stop time travelling and return to live mode, click *Go live* or *BACK TO LIVE* at the top of the screen.
 
-image::../../.gitbook/assets/v51_timeline_go_live.png[Go live]
+image::v51_timeline_go_live.png[Go live]

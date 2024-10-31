@@ -5,7 +5,7 @@
 
 The *Filters* menu on the top right corner of the view UI allows you to filter the components (topology) and events displayed in a view. Once applied, the filters will affect the content of all the perspectives in a view.
 
-image::../../.gitbook/assets/k8s/k8s-filters.png[View filters]
+image::k8s/k8s-filters.png[View filters]
 
 == Filter topology
 
@@ -18,7 +18,7 @@ Topology filters can be used to select a sub-set of topology components to be sh
 
 On the xref:k8s-views.adoc[kubernetes views], the topology filters are limited to a small set of basic filters that persist across all the Kubernetes views: `clusters` and / or `namespaces`. The persistent topology filters for Kubernetes views are placed outside the regular `filters` menu in the UI and are not interdependent on each other (e.g. selecting a cluster does *not* automatically update the `namespaces` filter to reflect only the namespaces of that cluster).
 
-image::../../.gitbook/assets/k8s/k8s-filters-kube-topology.png[Kubernetes topology filters]
+image::k8s/k8s-filters-kube-topology.png[Kubernetes topology filters]
 
 === Topology filters on other view types
 
@@ -50,7 +50,7 @@ The main way to filter topology is using the available basic filters. When you s
 
 To filter the topology using basic filters, click the *Filters* menu in the top right corner of the UI and select *Switch to basic* under the *Topology* vertical tab.
 
-image::../../.gitbook/assets/k8s/k8s-filters-basic-topology.png[Basic topology filters]
+image::k8s/k8s-filters-basic-topology.png[Basic topology filters]
 
 ==== Advanced topology filters
 
@@ -69,7 +69,7 @@ The STQL query example below will return components that match the following con
 (domain IN ("security check") AND healthstate IN ("CLEAR", "DEVIATING")) OR name IN ("ai_engine")
 ----
 
-image::../../.gitbook/assets/k8s/k8s-filters-advanced-topology.png[Advanced topology filters]
+image::k8s/k8s-filters-advanced-topology.png[Advanced topology filters]
 
 ==== Compatibility of basic and advanced filters
 
@@ -135,4 +135,4 @@ The following event filters are available:
 | Relevant event properties will be added as tags when an event is retrieved from an external system. For example `status:open` or `status:production`. This can help to identify events relevant to a specific problem or environment.
 |===
 
-image::../../.gitbook/assets/k8s/k8s-filters-events.png[Events filters]
+image::k8s/k8s-filters-events.png[Events filters]

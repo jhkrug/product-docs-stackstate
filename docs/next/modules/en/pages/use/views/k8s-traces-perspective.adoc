@@ -10,7 +10,7 @@ Parent spans in the same trace are collapsed by default, but can be expanded as 
 Spans are colored differently according to their OpenTelemetry ServiceName.
 When inspecting a trace and seeing the list of its spans, you can click on any span to see further details.
 
-image::../../.gitbook/assets/k8s/k8s-traces-perspective.png[Traces perspective]
+image::k8s/k8s-traces-perspective.png[Traces perspective]
 
 == Filter traces
 
@@ -31,7 +31,7 @@ The traces perspective shows the spans related to the resource, along with their
 As a descendant span can originate from an other resource, it is possible to navigate to it from the span details.
 The "parent spans" link will expand the view to show the full trace.
 
-image::../../.gitbook/assets/k8s/k8s-traces-perspective-span-details.png[A descendant span details]
+image::k8s/k8s-traces-perspective-span-details.png[A descendant span details]
 
 The two images above illustrate these concepts by showing a checkout service whose main responsibility is to create an order from a cart.
 You can see an example of a trace and its spans for a request to place an order.

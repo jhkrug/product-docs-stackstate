@@ -9,7 +9,7 @@ Kubernetes keeps comprehensive logs of cluster activity and application output. 
 
 Errors and warnings in the logs are indicators of potential problems in your application, containers or the pod itself. To explore logs when on the pod screen click *Show logs* button.
 
-image::../../.gitbook/assets/k8s/k8s-logs.png[]
+image::k8s/k8s-logs.png[]
 
 == Using pod logs
 
@@ -24,4 +24,4 @@ Use these options to show or hide additional information for each log line:
 * *Wrap lines* to enable wrapping for the long lines
 * *Newest first/Oldest first* to switch the log sorting order
 
-image::../../.gitbook/assets/k8s/k8s-logs-opened.png[]
+image::k8s/k8s-logs-opened.png[]

@@ -5,13 +5,13 @@
 
 The Topology Perspective displays the components in your IT landscape and their relationships.
 
-image::../../.gitbook/assets/k8s/k8s-topology-perspective.png[Topology perspective]
+image::k8s/k8s-topology-perspective.png[Topology perspective]
 
 == Legend
 
 Click on the Legend button (?) in the bottom right of the screen (just below the zoom controls) to display an explanation of the icons and colors used in the topology visualization.
 
-image::../../.gitbook/assets/k8s/k8s-topology-perspective-legend.png[Topology perspective legend]
+image::k8s/k8s-topology-perspective-legend.png[Topology perspective legend]
 
 == Components
 
@@ -29,7 +29,7 @@ When you hover the mouse pointer over a component, the component context menu is
 * <<actions,Actions>> specific to the component
 * <<shortcuts,Shortcuts>> specific to the component
 
-image::../../.gitbook/assets/k8s/k8s-component-contex-menu.png[Component context menu]
+image::k8s/k8s-component-contex-menu.png[Component context menu]
 
 === Actions
 
@@ -101,13 +101,13 @@ If there are components with monitors on them which are outside the view but mig
 * *Show root cause only* - Only show the root causes of components shown by the current topology filters that have a `CRITICAL` or `DEVIATING` propagated health. Indirect relations are visualized if a component directly depends on at least one invisible component that leads to the root cause.
 * *Show full root cause tree* - Show all paths from components shown by the current topology filters that have a `CRITICAL` or `DEVIATING` propagated health to their root causes.
 
-image::../../.gitbook/assets/k8s/k8s-show-root-cause.png[Root cause]
+image::k8s/k8s-show-root-cause.png[Root cause]
 
 == List mode
 
 The components in the topology visualization can also be shown in a list instead of a graph:
 
-image::../../.gitbook/assets/k8s/k8s-topology-perspective-list-mode.png[Filtering(list format)]
+image::k8s/k8s-topology-perspective-list-mode.png[Filtering(list format)]
 
 === Export as CSV
 

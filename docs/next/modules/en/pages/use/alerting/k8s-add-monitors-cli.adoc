@@ -98,7 +98,7 @@ The results of a monitor need to be bound to components in SUSE Observability, t
 
 The metric that's used in this example is the `kubernetes_state_deployment_replicas_available` metric. Run the metric in the metric explorer to observe what labels are available on the time series:
 
-image::../../.gitbook/assets/k8s/available-replicas-metric-inspector.png[The available replicas in the metric explorer]
+image::k8s/available-replicas-metric-inspector.png[The available replicas in the metric explorer]
 
 In the above table it's shown the metric has labels like `cluster_name`, `namespace` and `deployment`.
 
@@ -108,7 +108,7 @@ Because the metric is observed on deployments, it's most logical to bind the mon
 . Open the `Topology` view, and click the deployment component.
 . When expanding the `Properties` in the right panel of the screen, the identifiers will show after hovering as shown below:
 
-image::../../.gitbook/assets/k8s/component-identifier.png[Finding a component identifier]
+image::k8s/component-identifier.png[Finding a component identifier]
 
 The identifier is shown as `urn:kubernetes:/preprod-dev.preprod.stackstate.io:calico-system:deployment/calico-typha`. This shows that the identifier is constructed based on the cluster name, namespace and deployment name. Knowing this, it's now possible to construct the `urnTemplate`:
 
