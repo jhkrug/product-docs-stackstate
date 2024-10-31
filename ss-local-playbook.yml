@@ -16,7 +16,9 @@ ui:
 
 asciidoc:
   attributes:
-    kw-build-type: 'product' # 'community' or 'product'
+    ss-build-type: 'product' # 'community' or 'product'
+    ss-rancher-product-name: 'SUSE® Rancher Prime: Observability'
+    ss-community-product-name: 'StackState'
     page-pagination: ''
   extensions:
     - asciidoctor-kroki
