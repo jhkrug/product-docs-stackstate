@@ -35,7 +35,8 @@ The built-in MinIO instance can be configured to store the backups in three loca
 
 === AWS S3
 
-{% hint style="warning" %}
+[CAUTION]
+====
 
 *Encryption*
 
@@ -44,7 +45,8 @@ Amazon S3-managed keys (SSE-S3) should be used when encrypting S3 buckets that s
 ⚠️ Encryption with AWS KMS keys stored in AWS Key Management Service (SSE-KMS) isn't supported. This will result in errors such as this one in the Elasticsearch logs:
 
 `Caused by: org.elasticsearch.common.io.stream.NotSerializableExceptionWrapper: sdk_client_exception: Unable to verify integrity of data upload. Client calculated content hash (contentMD5: ZX4D/ZDUzZWRhNDUyZTI1MTc= in base 64) didn't match hash (etag: c75faa31280154027542f6530c9e543e in hex) calculated by Amazon S3. You may need to delete the data stored in Amazon S3. (metadata.contentMD5: null, md5DigestStream: com.amazonaws.services.s3.internal.MD5DigestCalculatingInputStream@5481a656, bucketName: stackstate-elasticsearch-backup, key: tests-UG34QIV9s32tTzQWdPsZL/master.dat)",`
-{% endhint %}
+====
+
 
 To enable scheduled backups to AWS S3 buckets, add the following YAML fragment to the Helm `values.yaml` file used to install SUSE Observability:
 
@@ -147,7 +149,8 @@ The StackGraph, Elasticsearch and Victoria Metrics backups are stored in BLOB co
 
 === Kubernetes storage
 
-{% hint style="warning" %}
+[CAUTION]
+====
 If MinIO is configured to store its data in Kubernetes storage, a PersistentVolumeClaim (PVC) is used to request storage from the Kubernetes cluster. The kind of storage allocated depends on the configuration of the cluster.
 
 It's advised to use AWS S3 for clusters running on Amazon AWS and Azure Blob Storage for clusters running on Azure for the following reasons:
@@ -155,7 +158,8 @@ It's advised to use AWS S3 for clusters running on Amazon AWS and Azure Blob Sto
 . Kubernetes clusters running in a cloud provider usually map PVCs to block storage, such as Elastic Block Storage for AWS or Azure Block Storage. Block storage is expensive, especially for large data volumes.
 . Persistent Volumes are destroyed when the cluster that created them is destroyed. That means an (accidental) deletion of your cluster will also destroy all backups stored in Persistent Volumes.
 . Persistent Volumes can't be accessed from another cluster. That means that it isn't possible to restore SUSE Observability from a backup taken on another cluster.
-{% endhint %}
+====
+
 
 To enable backups to cluster-local storage, enable MinIO by adding the following YAML fragment to the Helm `values.yaml` file used to install SUSE Observability:
 
@@ -200,7 +204,8 @@ The backup retention delta can be configured using the Helm value `backup.stackG
 
 == Metrics (Victoria Metrics)
 
-{% hint style="danger" %}
+[WARNING]
+====
 Victoria Metrics use incremental backups without versioning of a bucket, it means that the new backup *replaces completely the previous one*.
 
 In case you run into one of the following situations:
@@ -210,31 +215,38 @@ In case you run into one of the following situations:
 
 The next (empty) backup created will be labeled with a new version and the previous one, before the volume was emptied, will be preserved.
 Both backups will be from that moment on <<list-victoria-metrics-backups,listed as available for restore>>.
-{% endhint %}
+====
+
 
 Metrics (Victoria Metrics) use instant snapshots to store data in incremental backups. Many instances of Victoria Metrics can store backups to the same bucket, each of them will be stored in separated directory. All files located in the directory should be treated as a single whole and can only be moved, copied or deleted as a whole.
 
-{% hint style="info" %}
+[NOTE]
+====
 High Available deployments should be deployed with two instances of Victoria Metrics. Backups are enabled/configured independently for each of them.
 
 The following code snippets/commands are provided for the first instance of Victoria Metric `victoria-metrics-0`. To backup/configure the second instance you should use `victoria-metrics-1`
-{% endhint %}
+====
+
 
 === Enable scheduled backups
 
 Backups of Victoria Metrics are disabled by default. To enabled scheduled Victoria Metrics backups, set the Helm value `victoria-metrics-0.backup.enabled` to `true`.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Victoria Metrics backups requires to <<enable-backups,enable backups>>.
-{% endhint %}
+====
+
 
 === Enable restores
 
 Restore functionality of Victoria Metrics are disabled by default. To enabled restore functionality of Victoria Metrics, set the Helm value `victoria-metrics-0.restore.enabled` to `true`.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Victoria Metrics restore functionality requires to <<enable-backups,enable backups>>.
-{% endhint %}
+====
+
 
 === Backup schedule
 
@@ -253,17 +265,21 @@ ClickHouse uses both incremental and full backups. By default, full backups are 
 
 Backups of the ClickHouse are disabled by default. To enabled scheduled ClickHouse backups, set the Helm value `clickhouse.backup.enabled` to `true`.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 ClickHouse backups requires to <<enable-backups,enable backups>>.
-{% endhint %}
+====
+
 
 === Enable restores
 
 Restore functionality of the ClickHouse are disabled by default. To enabled restore functionality of the ClickHouse, set the Helm value `clickhouse.restore.enabled` to `true`.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 ClickHouse restore functionality requires to <<enable-backups,enable backups>>.
-{% endhint %}
+====
+
 
 === Backup schedule
 
@@ -272,9 +288,11 @@ By default, the ClickHouse backups are created:
 * Full Backup - at 00:45 every day
 * Incremental Backup - 45 minutes past the hour (from 3 am to 12 am)
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Backups struggle with parallel execution. If a second backup starts before the first one completes, it will disrupt the first backup. Therefore, it's crucial to avoid parallel execution. For instance, the first incremental backup should be executed three hours after the full one.
-{% endhint %}
+====
+
 
 The backup schedule can be configured using the Helm value `clickhouse.backup.scheduled.full_schedule` and `clickhouse.backup.scheduled.incremental_schedule` according https://github.com/aptible/supercronic/tree/master/cronexpr[cronexpr format]
 
@@ -314,9 +332,11 @@ The retention time and number of snapshots kept can be configured using the foll
 * `backup.elasticsearch.scheduled.snapshotRetentionMinCount`
 * `backup.elasticsearch.scheduled.snapshotRetentionMaxCount`
 
-{% hint style="info" %}
+[NOTE]
+====
 By default, the retention task itself https://www.elastic.co/guide/en/elasticsearch/reference/7.6/slm-settings.html#slm-retention-schedule[runs daily at 1:30 AM UTC (elastic.co)]. If you set snapshots to expire faster than within a day, for example for testing purposes, you will need to change the schedule for the retention task.
-{% endhint %}
+====
+
 
 === Snapshot indices
 
@@ -328,7 +348,8 @@ The indices for which a snapshot is created can be configured using the Helm val
 
 Scripts to list and restore backups and snapshots can be found in the https://github.com/StackVista/helm-charts/tree/master/stable/suse-observability/restore[restore directory of the SUSE Observability Helm chart repository (github.com)]. To use the scripts, download them from GitHub or checkout the repository.
 
-{% hint style="info" %}
+[NOTE]
+====
 *Before you use the scripts, ensure that:*
 
 * The `kubectl` binary is installed and configured to connect to:
@@ -339,7 +360,8 @@ Scripts to list and restore backups and snapshots can be found in the https://gi
  .. `backup.stackGraph.restore.enabled` isn't set to `false` (to access StackGraph backups).
  .. `backup.elasticsearch.restore.enabled` isn't set to `false` (to access Elasticsearch snapshots).
  .. `victoria-metrics-0.restore.enabled` or `victoria-metrics-1.restore.enabled` isn't set to `false` (to access Victoria Metrics snapshots).
-{% endhint %}
+====
+
 
 === List StackGraph backups
 
@@ -371,17 +393,21 @@ job.batch "stackgraph-list-backups-20210222t111942" deleted
 
 The timestamp when the backup was taken is part of the backup name.
 
-{% hint style="info" %}
+[NOTE]
+====
 Lines in the output that start with `Error from server (BadRequest):` are expected. They appear when the script is waiting for the pod to start.
-{% endhint %}
+====
+
 
 === Restore a StackGraph backup
 
-{% hint style="warning" %}
+[CAUTION]
+====
 *To avoid the unexpected loss of existing data, a backup can only be restored on a clean environment by default.*
 If you are completely sure that any existing data can be overwritten, you can override this safety feature by using the command `-force`.
 Only execute the restore command when you are sure that you want to restore the backup.
-{% endhint %}
+====
+
 
 To restore a StackGraph backup on a clean environment, select a backup name and pass it as the first parameter in the following command:
 
@@ -391,11 +417,13 @@ To restore a StackGraph backup on a clean environment, select a backup name and 
 ----
 
 To restore a StackGraph backup on an *environment with existing data*, select a backup name and pass it as the first parameter in the following command next to a second parameter `-force`:
-{% hint style="info" %}
+[NOTE]
+====
 *Note that existing data will be overwritten when the backup is restored.*
 
 Only do this if you are completely sure that any existing data can be overwritten.
-{% endhint %}
+====
+
 
 [,bash]
 ----
@@ -427,9 +455,11 @@ In case you are running a restore command missing the `-force` flag on a non-emp
 ERROR com.stackvista.graph.migration.Restore - Restore isn't possible in a non empty.
 ----
 
-{% hint style="info" %}
+[NOTE]
+====
 Lines that starts with `WARNING:` are expected. They're generated by Groovy running in JDK 11 and can be ignored.
-{% endhint %}
+====
+
 
 === List Victoria Metrics backups
 
@@ -459,15 +489,19 @@ where you can see the Victoria metrics instance, the specific backup version and
 
 === Restore a Victoria Metrics backup
 
-{% hint style="warning" %}
+[CAUTION]
+====
 *Restore functionality always overrides data. You must be careful to avoid the unexpected loss of existing data.*
-{% endhint %}
+====
 
-{% hint style="warning" %}
+
+[CAUTION]
+====
 *Restore functionality requires to stop an instance of Victoria Metric while the process.*
 
 All new metrics will be cached by `vmagent` while the restore process, please ensure the `vmagent` has enough memory to cache metrics.
-{% endhint %}
+====
+
 
 To restore a Victoria Metrics backup, select an instance name and a backup version and pass them as parameters in the following command:
 
@@ -507,9 +541,11 @@ After completion (*ensure if the backup has been restored successfully*), it's n
 
 === List ClickHouse backups
 
-{% hint style="info" %}
+[NOTE]
+====
 The following script needs permission to execute the `kubectl exec` command.
-{% endhint %}
+====
+
 
 To list ClickHouse backups, execute the following command:
 
@@ -543,17 +579,23 @@ where is printed:
 
 === Restore a ClickHouse backup
 
-{% hint style="warning" %}
+[CAUTION]
+====
 *Restore functionality always overrides data (all tables in the `otel` database). You must be careful to avoid the unexpected loss of existing data.*
-{% endhint %}
+====
 
-{% hint style="info" %}
+
+[NOTE]
+====
 The following script needs permission to execute the `kubectl exec` command.
-{% endhint %}
+====
 
-{% hint style="warning" %}
+
+[CAUTION]
+====
 *Restore functionality requires stopping all producers (like OpenTelemetry exporters). The script scales the StatefulSet down and then back up afterward.*
-{% endhint %}
+====
+
 
 To restore a ClickHouse backup, select a backup version and pass them as a parameter in the following command:
 
@@ -576,14 +618,16 @@ The output should look like this:
 Data restored
 ----
 
-{% hint style="info" %}
+[NOTE]
+====
 *Error: error can't create table .... code: 57, message: Directory for table data store/.../ already exists*
 
 ClickHouse does not permanently delete tables when the `+DROP DATABASE/TABLE ...+` command is executed. Instead, the database is marked as deleted and will be permanently removed after 8 minutes. This delay provides additional time to undo the operation. More details can be found at https://clickhouse.com/docs/en/sql-reference/statements/undrop[UNDROP TABLE]. If you attempt to restore data during this period, it will fail and produce the aforementioned error. Available solutions:
 
 * wait 8 minutes (check table `select * from system.dropped_tables;` )
 * configure `database_atomic_delay_before_drop_table_sec`
-{% endhint %}
+====
+
 
 === List Elasticsearch snapshots
 
@@ -673,11 +717,13 @@ curl -X DELETE "http://localhost:9200/sts_internal_events-2021.02.19?pretty"
 
 === Restore an Elasticsearch snapshot
 
-{% hint style="danger" %}
+[WARNING]
+====
 *When a snapshot is restored, existing indices won't be overwritten.*
 
 See link:kubernetes_backup.adoc#delete-elasticsearch-indices[delete Elasticsearch indices].
-{% endhint %}
+====
+
 
 To restore an Elasticsearch snapshot, select a snapshot name and pass it as the first parameter in the following command line. You can optionally specify a second parameter with a comma-separated list of the indices that should be restored. If not specified, all indices that match the Helm value `backup.elasticsearch.scheduled.indices` will be restored (default `"sts*"`):
 

@@ -34,9 +34,11 @@ To create a service token in your instance of SUSE Observability, you can use th
 sts service-token create
 ----
 
-{% hint style="info" %}
+[NOTE]
+====
 Note that the service token will only be displayed once. It isn't possible to see the token again.
-{% endhint %}
+====
+
 
 This command takes the following command line arguments:
 

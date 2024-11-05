@@ -21,9 +21,11 @@ image::k8s/notifications-slack-channel-configuration.png[Select the Slack channe
 
 Back in SUSE Observability you can now select a Slack channel from the list. Select the channel where the notification messages need to be sent.
 
-{% hint style="info" %}
+[NOTE]
+====
 Private channels won't be listed automatically. To select a private channel first invite the SUSE Observability bot into the private channel by sending a Slack message in the channel that mentions the bot `@SUSE Observability` and selecting "Invite them." Now the channel will become available in the list.
-{% endhint %}
+====
+
 
 == Add and test the channel
 

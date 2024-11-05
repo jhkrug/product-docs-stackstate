@@ -9,9 +9,11 @@
 
 == Un-install the Helm chart
 
-{% hint style="info" %}
+[NOTE]
+====
 Un-installing the helm chart will preserve all data because helm will not remove the Persistent Volume Claims nor the namespace. To remove those as well also link:uninstall.adoc#remove-remaining-resources[remove the remaining resources].
-{% endhint %}
+====
+
 
 To un-install SUSE Observability the first action is to run the `helm uninstall` command. This command will remove all resources created by the `helm upgrade --install` command.
 
@@ -31,9 +33,11 @@ If you want to re-install SUSE Observability later and have the old data still a
 
 == Remove remaining resources
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Removing the Persistent Volume Claims and/or the namespace will result in all data being lost that was stored in SUSE Observability.
-{% endhint %}
+====
+
 
 To remove the namespace and with that, the Persistent Volume Claims and their linked Persistent Volumes simply remove the entire namespace:
 
@@ -58,9 +62,11 @@ oc delete scc suse-observability-suse-observability
 
 == Remove manually created resources
 
-{% hint style="info" %}
+[NOTE]
+====
 Even if you intend to re-install SUSE Observability on the same cluster but in a different namespace these can be removed. The resources contain references to the SUSE Observability namespace.
-{% endhint %}
+====
+
 
 As described in the link:required_permissions.adoc#manually-create-cluster-wide-resources[required permissions] it might have been necessary that your cluster admin created some resources manually. These resources can now be removed again, but that also is a manual task that requires admin permission.
 

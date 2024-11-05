@@ -167,6 +167,8 @@ stackstate:
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
+[NOTE]
+====
 The NonHa example belongs to the biggest NonHa instance meant to observe 100 nodes and retain data for 2 weeks.
-{% endhint %}
+====
+

@@ -69,9 +69,11 @@ chmod a+x o11y-agent-get-images.sh o11y-agent-save-images.sh
 ./o11y-agent-get-images.sh -f suse-observability-agent-X.Y.Z.tgz > o11y-agent-images.txt
 ----
 
-{% hint style="info" %}
+[NOTE]
+====
 Replace `suse-observability-agent-X.Y.Z.tgz` with the actual filename of the chart archive downloaded earlier.*
-{% endhint %}
+====
+
 
 [,bash]
 ----
@@ -104,9 +106,11 @@ export DST_REGISTRY_PASSWORD="..."
 ./o11y-agent-load-images.sh -d registry.example.com:5043 -i o11y-agent-images.txt -f o11y-agent-images.tar.gz
 ----
 
-{% hint style="info" %}
+[NOTE]
+====
 _Note: if the destination registry doesn't use authentication the environment variables, `DST_REGISTRY_USERNAME` and `DST_REGISTRY_PASSWORD` must not be configured or have to be set to empty values._
-{% endhint %}
+====
+
 
 == Installing SUSE Observability Agent
 

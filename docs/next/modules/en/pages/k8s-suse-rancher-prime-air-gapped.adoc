@@ -71,9 +71,11 @@ chmod a+x o11y-get-images.sh o11y-save-images.sh
 ./o11y-get-images.sh -f suse-observability-A.B.C.tgz > o11y-images.txt
 ----
 
-{% hint style="info" %}
+[NOTE]
+====
 Replace `suse-observability-A.B.C.tgz` with the actual filename of the chart archive downloaded earlier.*
-{% endhint %}
+====
+
 
 [,bash]
 ----
@@ -107,9 +109,11 @@ export DST_REGISTRY_PASSWORD="..."
 ./o11y-load-images.sh -d registry.example.com:5043 -i o11y-images.txt -f o11y-images.tar.gz
 ----
 
-{% hint style="info" %}
+[NOTE]
+====
 If the destination registry doesn't use authentication the environment variables, `DST_REGISTRY_USERNAME` and `DST_REGISTRY_PASSWORD` must not be configured or have to be set to empty values.*
-{% endhint %}
+====
+
 
 == Installing SUSE Observability
 

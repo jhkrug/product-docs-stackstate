@@ -62,9 +62,11 @@ In the table below you can find the resource requirements for the different inst
 
 These are just the upper and lower bounds of the resources that can be consumed by SUSE Observability in the different installation options. The actual resource usage will depend on the features used, configured resource limits and dynamic usage patterns, such as Deployment or DaemonSet scaling. For our Self-hosted customers, we recommend to start with the default requirements and monitor the resource usage of the SUSE Observability components.
 
-{% hint style="info" %}
+[NOTE]
+====
 The minimum requirements do not include spare CPU/Memory capacity to ensure smooth application rolling updates.
-{% endhint %}
+====
+
 
 For installation of SUSE Observability please follow the installation instructions provided below:
 
@@ -101,9 +103,11 @@ For our different installation profiles, the following are the defaulted storage
 | 2.5TB
 |===
 
-{% hint style="info" %}
+[NOTE]
+====
 The storage estimates presented take into account a default of 14 days of retention for NONHA and 1 month for HA installations. For short lived test instances the storage sizes can be further reduced.
-{% endhint %}
+====
+
 
 For more details on the defaults used, see the page xref:/setup/install-stackstate/kubernetes_openshift/storage.adoc[Configure storage].
 

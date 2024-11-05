@@ -10,9 +10,11 @@ For better security SUSE Observability can be configured to use exactly one of t
 * xref:oidc.adoc[Open ID Connect (OIDC)]
 * xref:keycloak.adoc[KeyCloak (a specialized version of OIDC)]
 
-{% hint style="info" %}
+[NOTE]
+====
 Authentication configuration is part of the Helm chart, any changes will automatically trigger a restart of the pods requiring that.
-{% endhint %}
+====
+
 
 == User roles
 

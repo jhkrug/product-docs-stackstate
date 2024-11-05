@@ -75,13 +75,15 @@ Follow the steps below to configure SUSE Observability to authenticate using OID
  suse-observability/suse-observability
 ----
 
-{% hint style="info" %}
+[NOTE]
+====
 *Note:*
 
 * The first run of the helm upgrade command will result in pods restarting, which may cause a short interruption of availability.
 * Include `authentication.yaml` on every `helm upgrade` run.
 * The authentication configuration is stored as a Kubernetes secret.
-{% endhint %}
+====
+
 
 == Additional settings for specific OIDC providers
 

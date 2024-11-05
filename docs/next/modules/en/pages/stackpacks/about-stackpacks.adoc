@@ -11,14 +11,16 @@ There are two types of StackPack - Add-ons and Integrations. The available Stack
 
 StackPacks can be installed and uninstalled from the *StackPacks* page in SUSE Observability. Full instructions to install and uninstall the StackPack are provided.
 
-{% hint style="info" %}
+[NOTE]
+====
 *Note that:*
 
 * A StackPack may require *manual* installation steps or configuration of the external system. Please read the instructions provided carefully.
 * When a StackPack or StackPack instance is uninstalled, *all data received via the StackPack (instance) will be removed from SUSE Observability.*
 * Any (manual) configuration or installation of StackPack components in an external system may need to be uninstalled separately.
 
-{% endhint %}
+====
+
 
 === StackPack instances
 
@@ -28,9 +30,11 @@ For example, the AWS StackPack can connect to multiple AWS accounts and combine 
 
 == Upgrade a StackPack
 
-{% hint style="warning" %}
+[CAUTION]
+====
 When a StackPack is upgraded, *any changes made to configuration items from that StackPack will be overwritten*. For details, see link:about-stackpacks.adoc#locked-configuration-items[locked configuration items].
-{% endhint %}
+====
+
 
 If a new StackPack version is available, an alert will be displayed on the SUSE Observability UI StackPack page and you will have the option to view the upgrade details and read the release notes. If the new release is a minor upgrade from the currently installed version, you can also upgrade the StackPack from here.
 
@@ -42,13 +46,16 @@ Note that all StackPack configuration items will be overwritten when you upgrade
 
 === New major StackPack version
 
-{% hint style="warning" %}
+[CAUTION]
+====
 When a StackPack is upgraded, *any changes made to configuration items from that StackPack will be overwritten*. For details, see link:about-stackpacks.adoc#locked-configuration-items[locked configuration items].
-{% endhint %}
+====
+
 
 To upgrade to a new major version of a StackPack, link:about-stackpacks.adoc#install-or-uninstall-a-stackpack[uninstall and reinstall] the StackPack.
 
-{% hint style="success" "self-hosted info" %}
+[TIP]
+====
 
 Continue using changes made to customized StackPack configuration items after upgrade:
 
@@ -63,7 +70,8 @@ Continue using changes made to customized StackPack configuration items after up
 . link:../setup/data-management/backup_restore/configuration_backup.adoc#import-configuration[Import] the updated export file(s).
 . The customized configuration items will now be available in SUSE Observability and can be copied to the newly installed StackPack configuration items.
 
-{% endhint %}
+====
+
 
 == Locked configuration items
 
@@ -71,7 +79,9 @@ StackPacks contain configuration information for SUSE Observability that's insta
 
 To prevent a user from making changes to configuration items installed by a StackPack that will be overwritten on upgrade, these configuration items are *locked* by default. This means that they're protected from being changed by the user and must explicitly be *unlocked* before they can be changed.
 
-{% hint style="success" "self-hosted info" %}
+[TIP]
+====
 
 You can xref:../setup/data-management/backup_restore/configuration_backup.adoc[make a back-up of configuration items]. Note that the lock status of configuration items won't be exported as part of a configuration backup.
-{% endhint %}
+====
+

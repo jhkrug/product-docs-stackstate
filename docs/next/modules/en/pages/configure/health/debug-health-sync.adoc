@@ -77,13 +77,15 @@ The substream status provides useful information to verify that SUSE Observabili
 $ sts health status -u urn:health:sourceId:streamId -sub-stream-urn subStreamId3
 ----
 
-{% hint style="info" %}
+[NOTE]
+====
 A substream status will show the metadata related to the consistency model:
 
 * *Repeat Snapshots* - Show repeat interval and expiry
 * *Repeat States* - Show repeat interval and expiry
 * *Transactional Increments* - Show checkpoint offset and checkpoint batch index
-{% endhint %}
+====
+
 
 The substream status can be expanded to include details of matched and unmatched check states using the `-t` command line argument. This is helpful to identify any health states that aren't attached to a topology element.
 In the example below, `checkStateId2` is listed under `Check states with identifier which has no matching topology element`. This means that it was not possible to match the check state to a topology element with the identifier `server-2`.
@@ -113,11 +115,13 @@ $ sts health clear-error -u urn:health:sourceId:streamId
 
 == Error messages
 
-{% hint style="info" %}
+[NOTE]
+====
 Errors will be closed once the described issue has been remediated.
 
 For example a `SubStreamStopWithoutStart` will be closed once the health synchronization observes a start snapshot message followed by a stop snapshot message.
-{% endhint %}
+====
+
 
 |===
 | Error | Description

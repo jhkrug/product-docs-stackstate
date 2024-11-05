@@ -1,9 +1,11 @@
 = Configuring SUSE Observability for E-mail notifications
 :description: SUSE Observability Self-hosted
 
-{% hint style="warning" %}
+[CAUTION]
+====
 SaaS users of SUSE Observability can use E-mail notifications without extra configuration. This guide is only applicable for self-hosted SUSE Observability installations, that are planning to use the E-mail notification channel.
-{% endhint %}
+====
+
 
 Before you can use the E-mail notification channel in SUSE Observability, you first need to follow the following steps:
 

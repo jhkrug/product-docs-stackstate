@@ -43,9 +43,11 @@ suse-observability \
 suse-observability/suse-observability
 ----
 
-{% hint style="info" %}
+[NOTE]
+====
 This step assummes that link:./kubernetes_install.adoc#generate-baseconfig_values.yaml-and-sizing_values.yaml[Generate `baseConfig_values.yaml` and `sizing_values.yaml`] was already executed.
-{% endhint %}
+====
+
 
 == Configure Ingress Rule for Open Telemetry Traces via the SUSE Observability Helm chart
 
@@ -89,9 +91,11 @@ suse-observability \
 suse-observability/suse-observability
 ----
 
-{% hint style="info" %}
+[NOTE]
+====
 This step assummes that link:./kubernetes_install.adoc#generate-baseconfig_values.yaml-and-sizing_values.yaml[Generate `baseConfig_values.yaml` and `sizing_values.yaml`] was already executed.
-{% endhint %}
+====
+
 
 == Configure via external tools
 
@@ -99,7 +103,8 @@ To make SUSE Observability accessible outside of the Kubernetes cluster it's ins
 
 Make sure to update the `baseUrl` in the values file generated during initial installation, it will be used by SUSE Observability to generate convenient installation instructions for the agent.
 
-{% hint style="info" %}
+[NOTE]
+====
 When manually configuring an Nginx or similar HTTP server as reverse proxy make sure that it can proxy websockets as well. For Nginx this can be configured by including the following directives in the `location` directive:
 
 [,text]
@@ -108,11 +113,14 @@ proxy_set_header Upgrade                 $http_upgrade;
 proxy_set_header Connection              "Upgrade";
 ----
 
-{% endhint %}
+====
 
-{% hint style="warning" %}
+
+[CAUTION]
+====
 SUSE Observability itself doesn't use TLS encrypted traffic, TLS encryption is expected to be handled by the ingress controller or external load balancers.
-{% endhint %}
+====
+
 
 == Agents in the same cluster
 

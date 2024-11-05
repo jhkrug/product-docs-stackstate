@@ -5,12 +5,14 @@
 
 Permissions in SUSE Observability allow Administrators to manage the actions that each user or user group can perform inside SUSE Observability and the information that will be shown in their SUSE Observability UI. Only the feature set relevant to each user's active role will be presented. The actions, information and pages that a user doesn't have access to are simply not displayed in their SUSE Observability UI.
 
-{% hint style="info" %}
+[NOTE]
+====
 Permissions are stored in StackGraph. This means that:
 
 * If you perform an upgrade with "clear all data", permission setup will also be removed.
 * To completely remove a user, they must also be manually removed from StackGraph.
-{% endhint %}
+====
+
 
 == SUSE Observability permissions
 
@@ -79,9 +81,11 @@ The following permissions are available in SUSE Observability:
 
 SUSE Observability permissions can be managed using the `sts` CLI.
 
-{% hint style="info" %}
+[NOTE]
+====
 *Important note:* All permissions in SUSE Observability are case sensitive.
-{% endhint %}
+====
+
 
 === List all permissions
 

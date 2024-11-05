@@ -167,9 +167,11 @@ kubectl get pvc --namespace stackstate
 
 The change made to the persistent volume claim (PVC) will remain for the lifetime of the PVC, but whenever a clean install is done it will be lost. More importantly however, after resizing the PVC there is now a discrepancy between the cluster state and the definition of the desired state in the values.yaml. Therefore it's recommended to update the values.yaml as well. To circumvent the fact that this change is not allowed, first remove the stateful set (but keep the pods running) to re-create it with the new settings.
 
-{% hint style="info" %}
+[NOTE]
+====
 This step doesn't change the size of the PVC itself, so only doing this step will result in no changes at all to the running environment.
-{% endhint %}
+====
+
 
 First edit your values.yaml to update the volume size for the PVC's you've just resized. See the sections on link:data_retention.adoc#retention-of-metrics[Metrics] or link:data_retention.adoc#retention-of-events-traces-and-logs[Events and Logs].
 

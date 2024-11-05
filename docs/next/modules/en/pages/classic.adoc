@@ -37,6 +37,8 @@ Use StackState SaaS to observe cloud technologies, such as Kubernetes and AWS se
 
 ↗️ https://docs.stackstate.com/v/stackstate-saas/[StackState SaaS docs]
 
-{% hint style="success" %}
+[TIP]
+====
 🔒 SUSE Observability is SOC2/3 certified. https://www.stackstate.com/compliance[Learn more]
-{% endhint %}
+====
+

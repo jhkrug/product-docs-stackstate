@@ -7,9 +7,11 @@ Whilst a xref:k8s-views.adoc[kubernetes view] acts as a starting point to explor
 
 In other words, you can create a custom view by saving a xref:k8s-views.adoc[kubernetes view] or an xref:k8s-explore-views.adoc[explore view] with your own settings (filters, visualization options, view settings, timeline configuration) to bookmark a part of your topology that's of particular interest to you or your team.
 
-{% hint style="info" %}
+[NOTE]
+====
 By default, custom views will be visible to all users, these can be secured by a *SUSE Observability administrator* if required.
-{% endhint %}
+====
+
 
 image::k8s/k8s-custom-view.png[Custom view]
 
@@ -55,9 +57,11 @@ When a custom view is created, all the filters, visualization options, view sett
 
 === Delete or edit a view
 
-{% hint style="info" %}
+[NOTE]
+====
 Note that changes made to a custom view will be applied for all users.
-{% endhint %}
+====
+
 
 A custom view can be edited or deleted from either the *all views* screen, or the *custom view* screen.
 

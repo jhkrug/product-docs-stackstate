@@ -1,9 +1,11 @@
 = Steps to upgrade
 :description: SUSE Observability Self-hosted
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Upgrading from StackState 6.0 to SUSE Observability is not yet supported.
-{% endhint %}
+====
+
 
 == Overview
 
@@ -13,17 +15,23 @@ This document describes the upgrade procedure for SUSE Observability.
 
 When executing a SUSE Observability upgrade, be aware of the following:
 
-{% hint style="warning" %}
+[CAUTION]
+====
 *Always read the* xref:version-specific-upgrade-instructions.adoc[*version-specific upgrade notes*] *before upgrading SUSE Observability.*
-{% endhint %}
+====
 
-{% hint style="warning" %}
+
+[CAUTION]
+====
 When upgrading a StackPack, *any changes you have made to configuration items from that StackPack will be overwritten*. See link:../../stackpacks/about-stackpacks.adoc#locked-configuration-items[Configuration Locking] for more information.
-{% endhint %}
+====
 
-{% hint style="danger" %}
+
+[WARNING]
+====
 If there are *hotfixes* installed in your SUSE Observability installation, contact SUSE Observability technical support prior to upgrading.
-{% endhint %}
+====
+
 
 == Steps to upgrade
 
@@ -63,9 +71,11 @@ Before upgrading SUSE Observability it's recommended to back up your configurati
 * xref:../data-management/backup_restore/kubernetes_backup.adoc[Kubernetes backup]
 * xref:../data-management/backup_restore/configuration_backup.adoc[Configuration backup]
 
-{% hint style="info" %}
+[NOTE]
+====
 Note that it won't be possible to restore the backup on the upgraded version of SUSE Observability. The SUSE Observability backup can only be restored in the SUSE Observability version before the upgrade.
-{% endhint %}
+====
+
 
 === Upgrade SUSE Observability
 

@@ -88,9 +88,11 @@ The advanced filters listed below are compatible with basic filtering, but can't
 
 The *Other filters* box in the basic topology filters lists all these advanced filters and the number of affected components.
 
-{% hint style="info" %}
+[NOTE]
+====
 The *Other filters* box only gives details of advanced filters that have been set and are compatible with basic filtering.
-{% endhint %}
+====
+
 
 ==== Topology filtering limits
 

@@ -20,11 +20,13 @@ Enabling trace header injection is a two-step process:
 . Install the mutating webhook into the cluster by adding `--set httpHeaderInjectorWebhook.enabled=true` to the helm upgrade invocation when installing the SUSE Observability agent. By default the sidecar injector generates its own self-signed certificate, requiring cluster roles to install these into the cluster. It is also possible to xref:/setup/agent/k8sTs-agent-request-tracing-certificates.adoc[manage your own certificates] in a more restricted environment.
 . For every pod that has a endpoint which processes http(s) requests, place the annotation `http-header-injector.stackstate.io/inject: enabled` to have the sidecar injected.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 *Enabling the mutating webhook will only take effect upon pod restart*
 
 If the annotation is placed before the webhook is installed. Installing the webhook has no effect until the pods get restarted.
-{% endhint %}
+====
+
 
 === Disabling trace header injection
 
@@ -33,11 +35,13 @@ Disabling the trace header injection can be done with the reverse process:
 . Remove the `http-header-injector.stackstate.io/inject: enabled` annotation from all pods.
 . Redeploy the SUSE Observability Agent without the `--set httpHeaderInjectorWebhook.enabled=true` setting.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 *Disabling the mutating webhook will only take effect upon pod restart*
 
 If step 1 is skipped and only the mutating webhook is disabled, all pods need a restart for the sidecar to be removed.
-{% endhint %}
+====
+
 
 === Overhead
 

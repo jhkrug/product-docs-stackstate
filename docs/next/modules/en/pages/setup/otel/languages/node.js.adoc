@@ -27,9 +27,11 @@ node --require @opentelemetry/auto-instrumentations-node/register app.js
 
 For more details please refer to the https://opentelemetry.io/docs/languages/js/automatic/[Open Telemetry documentation].
 
-{% hint style="warning" %}
+[CAUTION]
+====
 The auto instrumentation configured via environment variables only supports traces until this https://github.com/open-telemetry/opentelemetry-js/issues/4551[Open Telemetry issue] is resolved. To enable metrics from the automatic instrumentation code changes are needed. Please follow the instructions in the https://opentelemetry.io/docs/languages/js/exporters/#usage-with-nodejs[Open Telemetry documentation] to make these changes.
-{% endhint %}
+====
+
 
 == Manual instrumentation
 

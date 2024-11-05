@@ -144,9 +144,11 @@ sts monitor apply -f monitor.yaml
 
 Verify whether the monitor produces the expected results, using the steps <<verifying-the-results-of-a-monitor,below>>.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 The identifier is used as the unique key of a monitor. Changing the identifier will create a new monitor instead of updating the existing one.
-{% endhint %}
+====
+
 
 The `sts monitor` command has more options, for example it can list all monitors:
 

@@ -11,9 +11,11 @@ An export of the SUSE Observability configuration can be obtained from the SUSE 
 
 === SUSE Observability CLI
 
-{% hint style="info" %}
+[NOTE]
+====
 Note that the link:../../../stackpacks/about-stackpacks.adoc#locked-configuration-items[lock status] of configuration items installed by a StackPack configuration won't be included in the export.
-{% endhint %}
+====
+
 
 To export configuration using the `sts` CLI, run the command:
 
@@ -28,9 +30,11 @@ sts settings describe --file <PATH_TO_FILE.sty>
 
 === curl
 
-{% hint style="info" %}
+[NOTE]
+====
 Note that the link:../../../stackpacks/about-stackpacks.adoc#locked-configuration-items[lock status] of configuration items installed by a StackPack configuration won't be included in the export.
-{% endhint %}
+====
+
 
 To export configuration using curl, follow the steps below. The `<api-token>` used for authorization is available on the *CLI* page in the SUSE Observability UI main menu:
 
@@ -46,9 +50,11 @@ curl -X POST \
 
 === SUSE Observability UI
 
-{% hint style="info" %}
+[NOTE]
+====
 Note that the link:../../../stackpacks/about-stackpacks.adoc#locked-configuration-items[lock status] of configuration items installed by a StackPack configuration won't be included in the export.
-{% endhint %}
+====
+
 
 To export configuration from the SUSE Observability UI:
 
@@ -61,11 +67,13 @@ image::../../../.gitbook/assets/v51_export_configuration.png[Export configuratio
 
 === SUSE Observability CLI
 
-{% hint style="info" %}
+[NOTE]
+====
 
 * Import is intended to be a one-off action - importing multiple times might result in duplicate configuration entries. This behavior applies to importing nodes without any identifier.
 * Note that the link:../../../stackpacks/about-stackpacks.adoc#locked-configuration-items[lock status] of configuration items installed by a StackPack won't be included in configuration export files - *all configuration items will be unlocked after import*.
-{% endhint %}
+====
+
 
 To import SUSE Observability configuration using the `sts` CLI, follow the steps below.
 
@@ -78,11 +86,13 @@ sts settings apply --file <PATH_TO_FILE.sty>
 
 === curl
 
-{% hint style="info" %}
+[NOTE]
+====
 
 * Import is intended to be a one-off action - importing multiple times might result in duplicate configuration entries. This behavior applies to importing nodes without any identifier.
 * Note that the link:../../../stackpacks/about-stackpacks.adoc#locked-configuration-items[lock status] of configuration items installed by a StackPack won't be included in configuration export files - *all configuration items will be unlocked after import*.
-{% endhint %}
+====
+
 
 To import SUSE Observability configuration using curl with authentication, follow the steps below.
 
@@ -100,11 +110,13 @@ curl -X POST -d @export.sty \
 
 === SUSE Observability UI
 
-{% hint style="info" %}
+[NOTE]
+====
 
 * Import is intended to be a one-off action - importing multiple times might result in duplicate configuration entries. This behavior applies to importing nodes without any identifier.
 * Note that the link:../../../stackpacks/about-stackpacks.adoc#locked-configuration-items[lock status] of configuration items installed by a StackPack won't be included in configuration export files - *all configuration items will be unlocked after import*.
-{% endhint %}
+====
+
 
 Before import, clear the SUSE Observability configuration by following the instructions at xref:/setup/data-management/clear_stored_data.adoc[clear stored data].
 

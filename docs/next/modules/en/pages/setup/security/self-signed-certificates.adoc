@@ -92,13 +92,15 @@ suse-observability \
 suse-observability/suse-observability
 ----
 
-{% hint style="info" %}
+[NOTE]
+====
 *Note:*
 
 * The first run of the helm upgrade command will result in pods restarting, which may cause a short interruption of availability.
 * Include these arguments on every `helm upgrade` run.
 * The password and trust store are stored as a Kubernetes secret.
-{% endhint %}
+====
+
 
 [discrete]
 ==== Base64 encoded trust stores

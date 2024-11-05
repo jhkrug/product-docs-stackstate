@@ -25,17 +25,21 @@ cluster-role:
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
+[NOTE]
+====
 If the creation of the cluster role and cluster role binding has been disabled please make sure to follow the instructions below to manually create them using the link:required_permissions.adoc#manually-create-cluster-wide-resources[instructions below].
-{% endhint %}
+====
+
 
 === Manually create cluster-wide resources
 
 If you need to manually create the cluster-wide resources, ask your Kubernetes/OpenShift administrator to create the 3 resources below in the clsuter.
 
-{% hint style="info" %}
+[NOTE]
+====
 Verify that you specify the correct service account and namespace for the bound `ServiceAccount` for both of the `ClusterRoleBinding` resources. The example assumes the `suse-observability` namespace is used and that `suse-observability` is used as the release, if some other namespace is used changed the namespace in the examples. Also the service accounts referenced need to be changed to `<release>-suse-observability-api`.
-{% endhint %}
+====
+
 
 {% tabs %}
 {% tab title="clusterrole-authorization.yaml" %}
@@ -125,9 +129,11 @@ elasticsearch:
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
+[NOTE]
+====
 If this is disabled, you will need to ensure that the `vm.max_map_count` setting is changed from its common default value of `65530` to `262144`. If this isn't done, Elasticsearch will fail to start up and its pods will be in a restart loop.
-{% endhint %}
+====
+
 
 To inspect the current `vm.max_map_count` setting, run the following command. Note that it runs a privileged pod:
 

@@ -177,9 +177,11 @@ You can now run CLI commands by adding appending them to the end of the `docker 
 
 === Quick start
 
-{% hint style="warning" %}
+[CAUTION]
+====
 The most secure way to use your API token is through an environment variable. You can store the API token with a secrets manager and inject it as an environment variable into your shell.
-{% endhint %}
+====
+
 
 ==== Linux, macOS and Windows
 

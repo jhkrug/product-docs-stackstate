@@ -35,9 +35,11 @@ To create a Key in your instance of SUSE Observability, you can use the `sts` CL
 > sts ingestion-api-key create --name {NAME}
 ----
 
-{% hint style="info" %}
+[NOTE]
+====
 Note that the Key will only be displayed once. It isn't possible to see the token again.
-{% endhint %}
+====
+
 
 This command takes the following command line arguments:
 

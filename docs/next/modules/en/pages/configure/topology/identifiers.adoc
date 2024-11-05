@@ -82,9 +82,11 @@ The format of the `<prefix>` and `<type-name>:<free-form>` segments are describe
 
 The `prefix` segment is a required part of a global identifier. It names the scope that the identifier belongs to and is used purely for organizational purposes.
 
-{% hint style="info" %}
+[NOTE]
+====
 When the prefix includes a StackPack name, the object will be under the control of that StackPack. This means that the object will be uninstalled when the StackPack is uninstalled.
-{% endhint %}
+====
+
 
 Recognized URN prefixes are:
 

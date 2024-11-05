@@ -186,9 +186,11 @@ httpd.serve_forever()
 . Configure the webhook in SUSE Observability with the URL for your webhook server `+http://webhook.example.com:8000+`
 . Click `test` on the webhook channel
 
-{% hint style="info" %}
+[NOTE]
+====
 The URL for your webhook must be accessible by SUSE Observability, so a localhost address or a local ip-address won't be enough.
-{% endhint %}
+====
+
 
 The example doesn't authenticate the request, which can be added by verifying the value of the <<validate-the-requests,token header>>.
 

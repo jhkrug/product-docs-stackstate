@@ -25,9 +25,11 @@ stackstate:
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
+[NOTE]
+====
 Note that custom configuration set here will be overridden by link:customize_config.adoc#environment-variables[environment variables].
-{% endhint %}
+====
+
 
 == Environment variables
 
@@ -64,9 +66,11 @@ stackstate:
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
+[NOTE]
+====
 For the SUSE Observability `api` service, environment variables will override <<custom-configuration-for-suse-observability-api,custom configuration set using `config`>>.
-{% endhint %}
+====
+
 
 * Full details on the naming of all the different services can be found in the https://github.com/StackVista/helm-charts/tree/master/stable/suse-observability[SUSE Observability Helm chart readme].
 * Find more details on xref:../../security/authentication/README.adoc[customizing authentication].

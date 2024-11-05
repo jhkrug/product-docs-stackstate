@@ -119,9 +119,11 @@ In this specific case use `max_over_time` to make sure the chart always shows th
 
 Copy the query into the `expression` property of the first entry in the `queries` field of the metric binding. Use `Total replicas` as an alias. This is the name that will show in the chart legend.
 
-{% hint style="info" %}
+[NOTE]
+====
 In SUSE Observability the size of the metric chart automatically determines the granularity of the metric shown in the chart. PromQL queries can adjusted to make optimal use of this behavior to get a representative chart for the metric. xref:./k8s-writing-promql-for-charts.adoc[Writing PromQL for charts] explains this in detail.
-{% endhint %}
+====
+
 
 == Bind the correct time series to each component
 
@@ -163,9 +165,11 @@ Supported variable references are:
 
 image::k8s/k8s-carts-highlights.png[Component Highlights page that shows the labels and component name (both highlighted in red)]
 
-{% hint style="info" %}
+[NOTE]
+====
 The cluster name, namespace and a combination of the component type and name are ususally enough for selecting the metrics for a specific component from Kubernetes. These labels, or similar labels, are usually available on most metrics and components.
-{% endhint %}
+====
+
 
 == Create or update the metric binding in SUSE Observability
 
@@ -196,9 +200,11 @@ sts settings apply -f metric-bindings.yaml
 
 Verify the results in SUSE Observability by opening the metrics perspective for a deployment. If you're not happy with the result simply change the metric binding in the YAML file and run the command again to update it. The list of nodes supports adding many metric bindings. Simply add another metric binding entry to the YAML array using the same steps as before.
 
-{% hint style="warning" %}
+[CAUTION]
+====
 The identifier is used as the unique key of a metric binding. Changing the identifier will create a new metric binding instead of updating the existing one.
-{% endhint %}
+====
+
 
 The `sts settings` command has more options, for example it can list all metric bindings:
 
@@ -216,17 +222,21 @@ sts settings delete --ids <id>
 
 The `<id>` in this command isn't the identifier but the number in the `Id` column of the `sts settings list` output.
 
-{% hint style="info" %}
+[NOTE]
+====
 The recommended way of working is to store metric bindings (and any other custom resources created in SUSE Observability) as YAML files in a Git repository. From there changes can be manually applied or it can be fully automated by using the SUSE Observability CLI in a CI/CD system like GitHub actions or GitLab pipelines.
-{% endhint %}
+====
+
 
 == Other options
 
 === More than 1 time series in a chart
 
-{% hint style="info" %}
+[NOTE]
+====
 There is only 1 unit for a metric binding (it gets plotted on the y-axis of the chart). As a result you should only combine queries that produce time series with the same unit in 1 metric binding. Sometimes it might be possible to convert the unit. For example, CPU usage might be reported in milli-cores or cores, milli-cores can be converted to cores by multiplying by 1000 like this  `(<original-query>) * 1000`.
-{% endhint %}
+====
+
 
 There are 2 ways to get more than 1 time series in a single metric binding and therefore in a single chart:
 

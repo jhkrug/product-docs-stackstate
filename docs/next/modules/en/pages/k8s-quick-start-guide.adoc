@@ -67,9 +67,11 @@ To set up a SUSE Observability Kubernetes integration you need to have:
 [discrete]
 === Set up a Kubernetes integration
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Before you begin, check the <<prerequisites-for-kubernetes,prerequisites for Kubernetes>>.
-{% endhint %}
+====
+
 
 To get data from a Kubernetes cluster into SUSE Observability, follow the steps described below:
 
@@ -89,9 +91,11 @@ To get data from a Kubernetes cluster into SUSE Observability, follow the steps 
 . Deploy the SUSE Observability Agent, Cluster Agent, Checks Agent and kube-state-metrics on your Cluster using the helm command provided in the SUSE Observability UI after you have installed the StackPack.
  ** Once the Agents have been deployed, they will begin collecting data and push this to SUSE Observability
 
-{% hint style="warning" %}
+[CAUTION]
+====
 When running on a self-hosted air-gapped environment prepare the agent installation first with the xref:./k8s-suse-rancher-prime-agent-air-gapped.adoc[air-gapped instructions].
-{% endhint %}
+====
+
 --
 
 = OpenShift
@@ -146,9 +150,11 @@ To set up a SUSE Observability OpenShift integration you need to have:
 [discrete]
 === Set up an OpenShift integration
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Before you begin, check the <<prerequisites-for-openshift,prerequisites for Kubernetes>>.
-{% endhint %}
+====
+
 
 To get data from a Kubernetes cluster into SUSE Observability, follow the steps described below:
 
@@ -271,9 +277,11 @@ To set up a SUSE Observability Amazon EKS integration you need to have:
 [discrete]
 === Set up a Amazon EKS integration
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Before you begin, check the <<prerequisites-for-amazon-eks,prerequisites for Kubernetes>>.
-{% endhint %}
+====
+
 
 To get data from a Kubernetes cluster into SUSE Observability, follow the steps described below:
 
@@ -351,9 +359,11 @@ To set up a SUSE Observability Google GKE integration you need to have:
 [discrete]
 === Set up a Google GKE integration
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Before you begin, check the <<prerequisites-for-amazon-eks,prerequisites for Kubernetes>>.
-{% endhint %}
+====
+
 
 To get data from a Kubernetes cluster into SUSE Observability, follow the steps described below:
 
@@ -427,9 +437,11 @@ To set up a SUSE Observability Azure AKS integration you need to have:
 [discrete]
 === Set up a Azure AKS integration
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Before you begin, check the <<prerequisites-for-amazon-eks,prerequisites for Kubernetes>>.
-{% endhint %}
+====
+
 
 To get data from a Kubernetes cluster into SUSE Observability, follow the steps described below:
 
@@ -503,9 +515,11 @@ To set up a SUSE Observability KOPS integration you need to have:
 [discrete]
 === Set up a KOPS integration
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Before you begin, check the <<prerequisites-for-amazon-eks,prerequisites for Kubernetes>>.
-{% endhint %}
+====
+
 
 To get data from a Kubernetes cluster into SUSE Observability, follow the steps described below:
 
@@ -581,9 +595,11 @@ To set up a SUSE Observability Self-hosted integration you need to have:
 [discrete]
 === Set up a self-hosted integration
 
-{% hint style="warning" %}
+[CAUTION]
+====
 Before you begin, check the <<prerequisites-for-amazon-eks,prerequisites for Kubernetes>>.
-{% endhint %}
+====
+
 
 To get data from a Kubernetes cluster into SUSE Observability, follow the steps described below:
 

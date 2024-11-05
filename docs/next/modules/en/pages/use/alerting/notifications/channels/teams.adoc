@@ -20,8 +20,6 @@ Copy the HTTP URL parameter.
 
 image::k8s/notifications-teams-select-url.png[Select URL from Flow]
 
-{% hint style="info" %}
-
 == Add and test the channel
 
 image::k8s/configure-teams-channel.png[Configure Teams Channe]
