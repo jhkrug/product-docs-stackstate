@@ -156,4 +156,4 @@ sts rbac revoke --subject [role-name] --permission access-view --resource [view-
 
 Below is an example of how the SUSE Observability UI would look for a user without any permissions:
 
-image::../../../.gitbook/assets/noperm.png[No permissions]
+image::noperm.png[No permissions]

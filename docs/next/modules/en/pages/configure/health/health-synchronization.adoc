@@ -15,7 +15,7 @@ The SUSE Observability Receiver API will automatically receive and process all i
 
 Details on how to ingest health data can be found on the following pages:
 
-* xref:send-health-data/send-health-data.adoc[Ingest health data through the SUSE Observability Receiver API]
+* xref:/configure/health/send-health-data/send-health-data.adoc[Ingest health data through the SUSE Observability Receiver API]
 
 == Health synchronization pipeline
 

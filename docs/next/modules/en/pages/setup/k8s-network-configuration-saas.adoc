@@ -24,7 +24,7 @@ For option 2 and 3, you need to configure the Helm Chart to pull the SUSE Observ
 
 The SUSE Observability Agent communicates with the SUSE Observability Receiver API over HTTPS. The different parts of the SUSE Observability Agent connect to the SUSE Observability Receiver API, hosted in your tenant in, see the following diagram:
 
-image::../.gitbook/assets/k8s/k8s-agent-communication.png[SUSE Observability Agent communication]
+image::k8s/k8s-agent-communication.png[SUSE Observability Agent communication]
 
 All communication is done over HTTPS, using the standard HTTPS port 443. The SUSE Observability Agent uses the following endpoints to communicate with the SUSE Observability Receiver API:
 

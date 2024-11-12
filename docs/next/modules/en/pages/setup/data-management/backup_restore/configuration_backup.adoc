@@ -61,7 +61,7 @@ To export configuration from the SUSE Observability UI:
 . Go to *Settings* > *Import/Export* > *Export Settings*
 . Click the button *STS-EXPORT-ALL*.
 
-image::../../../.gitbook/assets/v51_export_configuration.png[Export configuration from the SUSE Observability UI]
+image::v51_export_configuration.png[Export configuration from the SUSE Observability UI]
 
 == Import configuration
 
@@ -126,7 +126,7 @@ To import SUSE Observability configuration in the SUSE Observability UI:
 . Choose the `*.sty` file that you want to import configuration from.
 . Click the button *START IMPORT*.
 
-image::../../../.gitbook/assets/v51_import_configuration.png[Import configuration from the SUSE Observability UI]
+image::v51_import_configuration.png[Import configuration from the SUSE Observability UI]
 
 == Advanced import/export
 

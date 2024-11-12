@@ -9,7 +9,7 @@ SUSE Observability can authenticate using KeyCloak as an authentication provider
 
 When using Keycloak as an authentication provider, SUSE Observability will use OIDC (OpenID Connect) to authenticate users. The following diagram describes the authentication flow.
 
-image::../../../.gitbook/assets/k8s/keycloak-flow.png[Keycloak authentication flow]
+image::k8s/keycloak-flow.png[Keycloak authentication flow]
 
 == Configure KeyCloak
 

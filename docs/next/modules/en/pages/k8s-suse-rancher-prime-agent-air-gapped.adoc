@@ -117,11 +117,11 @@ _Note: if the destination registry doesn't use authentication the environment va
 The command to install the SUSE Observability Agent has to be received from SUSE Observability UI.
 Log in to your instance and in the left-side menu choose the `Stackpacks`. Press `ADD NEW INSTANCE` and fill in the name of the cluster. For correct integration with Rancher it has to be the same as the cluster name in the Rancher UI.
 
-image::.gitbook/assets/rancher-prime-agent-airgap-01.png[Adding New Agent]
+image::rancher-prime-agent-airgap-01.png[Adding New Agent]
 
 When an instance is added, the UI will provide the instructions how the Helm chart can be deployed. Scroll down to the `Self-hosted` section and copy `+helm upgrade ...+` command
 
-image::.gitbook/assets/rancher-prime-agent-airgap-02.png[Getting Helm Install Command]
+image::rancher-prime-agent-airgap-02.png[Getting Helm Install Command]
 
 The command has to be updated for the air-gapped installation:
 

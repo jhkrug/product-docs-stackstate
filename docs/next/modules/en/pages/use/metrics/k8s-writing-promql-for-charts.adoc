@@ -49,8 +49,8 @@ When the metric binding doesn't specify an aggregation SUSE Observability will a
 ====
 
 
-image:../../.gitbook/assets/k8s/metric-aggregation-differences-30m.png[The chart for this metric binding for the last 30m, there are only a few lines in the chart visible because most time series are on top of each other]
-image:../../.gitbook/assets/k8s/metric-aggregation-differences-24h.png[The same chart, same component and same end time, but now for the last 24h. It shows, sometimes completely, different results for the different aggregations]
+image::k8s/metric-aggregation-differences-30m.png[The chart for this metric binding for the last 30m, there are only a few lines in the chart visible because most time series are on top of each other]
+image::k8s/metric-aggregation-differences-24h.png[The same chart, same component and same end time, but now for the last 24h. It shows, sometimes completely, different results for the different aggregations]
 
 == Why is this necessary?
 
@@ -72,14 +72,14 @@ last_over_time(container_cpu_usage[1h]) /1000000000
 
 Try it for yourself on the https://play.stackstate.com/#/metrics?promql=last_over_time%28container_cpu_usage%7Bnamespace%3D%22sock-shop%22%2C%20pod_name%3D~%22carts.%2A%22%7D%5B%24%7B%5F%5Finterval%7D%5D%29%20%2F%201000000000&timeRange=LAST_7_DAYS[SUSE Observability playground].
 
-image:../../.gitbook/assets/k8s/k8s-metric-queries-for-chart-last-over-time.png[Last over time]
-image:../../.gitbook/assets/k8s/k8s-metric-queries-for-chart-max-over-time-fixed-range.png[Max over time with fixed range]
-image:../../.gitbook/assets/k8s/k8s-metric-queries-for-chart-max-over-time-interval.png[Max over time with automatic range]
+image::k8s/k8s-metric-queries-for-chart-last-over-time.png[Last over time]
+image::k8s/k8s-metric-queries-for-chart-max-over-time-fixed-range.png[Max over time with fixed range]
+image::k8s/k8s-metric-queries-for-chart-max-over-time-interval.png[Max over time with automatic range]
 
 Often this behavior isn't intended and it's better to decide for yourself what kind of aggregation is needed. Using different aggregation functions it's possible to emphasize certain behavior (at the cost of hiding other behavior). Is it more important to see peaks, troughs, a smooth chart etc.? Then use the `+${__interval}+` parameter for the range as it's automatically replaced with the `step` size used for the query. The result is that all the data points in the step are used.
 
-image:../../.gitbook/assets/k8s/k8s-metric-queries-small-range.png[A fixed range, shorter than the data resolution]
-image:../../.gitbook/assets/k8s/k8s-metric-queries-interval-for-range.png[Automatic range, based on step but with a lower limit]
+image::k8s/k8s-metric-queries-small-range.png[A fixed range, shorter than the data resolution]
+image::k8s/k8s-metric-queries-interval-for-range.png[Automatic range, based on step but with a lower limit]
 
 The `+${__interval}+` parameter prevents another issue. When the `step` size and therefore the `+${__interval}+` value, would shrink to a smaller size than the resolution of the stored metric data this would result in gaps in the chart.
 

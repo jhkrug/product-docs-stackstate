@@ -23,7 +23,7 @@ The below example shows the same topology view called "All Infrastructure" for f
 
 === This user is a part of SUSE Observability Admin group, so there is no scope:
 
-image::../../../.gitbook/assets/v51_allperm.png[Full view permissions]
+image::v51_allperm.png[Full view permissions]
 
 The query for this view is the same as for the others, but without any prefix:
 
@@ -39,7 +39,7 @@ The query for this view is the same as for the others, but without any prefix:
 'domain = "Customer1"'
 ----
 
-image::../../../.gitbook/assets/v51_esx1perm.png[Limited view]
+image::v51_esx1perm.png[Limited view]
 
 Query with the prefix for this view is:
 
@@ -57,7 +57,7 @@ Query with the prefix for this view is:
 
 gets this topology:
 
-image::../../../.gitbook/assets/v51_esx2perm.png[Limited view]
+image::v51_esx2perm.png[Limited view]
 
 Query with the prefix for this view is:
 
@@ -84,4 +84,4 @@ Query with prefix for this user is then:
 
 Which results in a following view:
 
-image::../../../.gitbook/assets/v51_allperm.png[Full view permissions]
+image::v51_allperm.png[Full view permissions]
